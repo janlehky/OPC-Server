@@ -81,7 +81,6 @@ namespace OPC_Server
             catch (Exception x)
             {
                 log.Fatal(x.Message);
-                // rtTransactions.Invoke((MethodInvoker)(() => rtTransactions.AppendText(x.Message)));
             }
         }
 
@@ -120,7 +119,6 @@ namespace OPC_Server
             catch (Exception x)
             {
                 log.Fatal(x.Message);
-                // rtTransactions.Invoke((MethodInvoker)(() => rtTransactions.AppendText(x.Message)));
             }
         }
 
@@ -159,7 +157,6 @@ namespace OPC_Server
             catch (Exception x)
             {
                 log.Fatal(x.Message);
-                // rtTransactions.Invoke((MethodInvoker)(() => rtTransactions.AppendText(x.Message)));
             }
         }
 
@@ -170,7 +167,6 @@ namespace OPC_Server
             {
                 // Console.WriteLine("\t{0} write result: {1}", writeResult.ItemName, writeResult.ResultID);
                 log.Info(writeResult.ResultID.ToString());
-                // rtTransactions.Invoke((MethodInvoker)(() => rtTransactions.AppendText(writeResult.ResultID.ToString() + "\n")));
             }
             Console.WriteLine();
         }
@@ -237,7 +233,6 @@ namespace OPC_Server
                     string[] data = content.Split(new[] { " " }, StringSplitOptions.None);
 
                     log.Info(content);
-                    // rtTransactions.Invoke((MethodInvoker)(() => rtTransactions.AppendText(content + "\n")));
 
                     if (data[0] == "w")
                     {
@@ -258,7 +253,6 @@ namespace OPC_Server
             catch(Exception x)
             {
                 log.Fatal(x.Message);
-                // rtTransactions.Invoke((MethodInvoker)(() => rtTransactions.AppendText(x.Message)));
             }
         }
 
@@ -315,7 +309,6 @@ namespace OPC_Server
             catch (Exception x)
             {
                 log.Fatal(x.Message);
-                // rtTransactions.Invoke((MethodInvoker)(() => rtTransactions.AppendText(x.Message)));
             }
         }
     }

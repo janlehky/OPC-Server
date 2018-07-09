@@ -30,7 +30,6 @@
         {
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnServerStart = new System.Windows.Forms.Button();
-            this.rtTransactions = new System.Windows.Forms.RichTextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ipAddress_form = new System.Windows.Forms.TextBox();
@@ -60,22 +59,14 @@
             this.btnServerStart.UseVisualStyleBackColor = true;
             this.btnServerStart.Click += new System.EventHandler(this.btnServerStart_Click);
             // 
-            // rtTransactions
-            // 
-            this.rtTransactions.Location = new System.Drawing.Point(16, 136);
-            this.rtTransactions.Name = "rtTransactions";
-            this.rtTransactions.Size = new System.Drawing.Size(452, 197);
-            this.rtTransactions.TabIndex = 4;
-            this.rtTransactions.Text = "";
-            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 336);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 145);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(480, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(464, 25);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -114,12 +105,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 361);
+            this.ClientSize = new System.Drawing.Size(464, 170);
             this.Controls.Add(this.opcServerAddress);
             this.Controls.Add(this.port_form);
             this.Controls.Add(this.ipAddress_form);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.rtTransactions);
             this.Controls.Add(this.btnServerStart);
             this.Controls.Add(this.btnConnect);
             this.Name = "Form1";
@@ -135,7 +125,6 @@
 
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnServerStart;
-        private System.Windows.Forms.RichTextBox rtTransactions;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stsLabel;
         private System.Windows.Forms.TextBox ipAddress_form;
