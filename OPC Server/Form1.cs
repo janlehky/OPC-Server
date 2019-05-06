@@ -41,10 +41,10 @@ namespace OPC_Server
             InitializeComponent();
 
             string localIP;
-            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+            using (Socket serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
             {
-                socket.Connect("8.8.8.8", 65530);
-                IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                serverSocket.Connect("8.8.8.8", 65530);
+                IPEndPoint endPoint = serverSocket.LocalEndPoint as IPEndPoint;
                 localIP = endPoint.Address.ToString();
             }
 
@@ -53,7 +53,7 @@ namespace OPC_Server
             opcServerAddress.Text = "opcda://localhost/RSLinx OPC Server";
 
             // open socket for communication
-            backgroundWorker1.RunWorkerAsync();
+            serverWorker.RunWorkerAsync();
 
             // connect to OPC server
             ConnectToOpcServer();
@@ -190,7 +190,11 @@ namespace OPC_Server
 
         private void btnServerStart_Click(object sender, EventArgs e)
         {
-            backgroundWorker1.RunWorkerAsync();
+            if (serverWorker.IsBusy)
+            {
+                serverWorker.CancelAsync();
+                serverWorker.RunWorkerAsync();
+            }
         }
 
         public void AcceptCallback(IAsyncResult ar)

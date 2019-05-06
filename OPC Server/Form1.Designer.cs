@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnServerStart = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stsLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ipAddress_form = new System.Windows.Forms.TextBox();
             this.port_form = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.serverWorker = new System.ComponentModel.BackgroundWorker();
             this.opcServerAddress = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +65,7 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 145);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 161);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(464, 25);
             this.statusStrip1.TabIndex = 7;
@@ -92,7 +93,7 @@
             // 
             // backgroundWorker1
             // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.serverWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // opcServerAddress
             // 
@@ -105,13 +106,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 170);
+            this.ClientSize = new System.Drawing.Size(464, 186);
             this.Controls.Add(this.opcServerAddress);
             this.Controls.Add(this.port_form);
             this.Controls.Add(this.ipAddress_form);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnServerStart);
             this.Controls.Add(this.btnConnect);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "OPC Server";
             this.statusStrip1.ResumeLayout(false);
@@ -129,7 +131,7 @@
         private System.Windows.Forms.ToolStripStatusLabel stsLabel;
         private System.Windows.Forms.TextBox ipAddress_form;
         private System.Windows.Forms.TextBox port_form;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker serverWorker;
         private System.Windows.Forms.TextBox opcServerAddress;
     }
 }
